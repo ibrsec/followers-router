@@ -251,7 +251,7 @@ console.log(page);
 useEffect(()=> {
  
   setFollowers(
-    allFollowers?.filter(user => user.login.includes(searchValue))
+    allFollowers?.filter(user => user.login.toLowerCase().includes(searchValue.trim().toLowerCase()))
   )
 },[searchValue])
 
