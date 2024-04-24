@@ -7,15 +7,26 @@ const UserDetail = () => {
   const [user, setUser] = useState({});
   const navigate = useNavigate();
 
+  const [loading,setLoading] = useState(false);
+    
+
   const getUser = async () => {
     const url = "https://api.github.com/users/" + username;
     try {
+
+        setLoading(true)
       const response = await axios.get(url);
       if (response.status !== 200) {
+
+        setLoading(false)
         throw new Error("not 200 get a user");
       }
+
+      setLoading(false)
       setUser(response.data);
     } catch (error) {
+
+        setLoading(false)
       console.log(error);
     }
   };
@@ -27,6 +38,10 @@ const UserDetail = () => {
   const { avatar_url, id, login, html_url, name,company , location,blog } = user;
   return (
     <div className="container mx-auto  text-center row">
+        {
+            loading ? <div className="text-center" > <img src="https://i0.wp.com/codemyui.com/wp-content/uploads/2017/07/fidget-spinner-loading.gif?fit=880%2C440&ssl=1" width="390px" alt="" /></div>
+            :  
+        
       <div className="border m-3 mx-auto text-center col-12 col-sm-12 col-md-9 col-lg-6 col-xl-6">
         <img src={avatar_url} alt="" className="w-100 object-fit-contain" />
         <div
@@ -70,6 +85,7 @@ const UserDetail = () => {
                 <button className="btn btn-danger" onClick={()=>navigate(-1)}>Go Back</button>
             </div>
       </div>
+      }
     </div>
   );
 };

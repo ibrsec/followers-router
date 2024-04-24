@@ -24,6 +24,7 @@ const [loading,setLoading] = useState(false);
         setFollowers(response.data);
 
     }catch(error){
+        setLoading(false)
         console.log(error);
     }
 
@@ -44,7 +45,7 @@ console.log(page);
         <Search />
         <Pagination setPage={setPage} />
         {
-            loading ? <div className="text-center" > <img src="https://i0.wp.com/codemyui.com/wp-content/uploads/2017/07/fidget-spinner-loading.gif?fit=880%2C440&ssl=1" alt="" /></div>
+            loading ? <div className="text-center" > <img src="https://i0.wp.com/codemyui.com/wp-content/uploads/2017/07/fidget-spinner-loading.gif?fit=880%2C440&ssl=1" width="390px" alt="" /></div>
             : <Followers followers={followers}/>
         }
         
