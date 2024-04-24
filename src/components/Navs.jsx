@@ -9,6 +9,7 @@ const Navs = ({isLogged,setIsLogged}) => {
     const handleLogoutCLick = (e) => {
         // e.preventDefault();
         setIsLogged(false);
+        sessionStorage.setItem("isLogged",false)
     }
   return (
     

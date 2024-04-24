@@ -14,8 +14,8 @@ const handleSpanActive = (e) => {
 
   return (
     <div className="text-center">
-        <span className="text-primary bg-warning border border-primary px-3 py-2 active " onClick={handleSpanActive} type="button">1</span>
-        <span className="text-primary bg-warning border border-primary px-3 py-2  " onClick={handleSpanActive} type="button">2</span>
+        <span className="text-primary bg-warning border border-primary px-3 py-2 active rounded-start-3 " onClick={handleSpanActive} type="button">1</span>
+        <span className="text-primary bg-warning border border-primary  px-3 py-2   " onClick={handleSpanActive} type="button">2</span>
         <span className="text-primary bg-warning border border-primary px-3 py-2  " onClick={handleSpanActive} type="button">3</span>
         <span className="text-primary bg-warning border border-primary px-3 py-2  " onClick={handleSpanActive} type="button">4</span>
         <span className="text-primary bg-warning border border-primary px-3 py-2  " onClick={handleSpanActive} type="button">5</span>
@@ -23,7 +23,7 @@ const handleSpanActive = (e) => {
         <span className="text-primary bg-warning border border-primary px-3 py-2  " onClick={handleSpanActive} type="button">7</span>
         <span className="text-primary bg-warning border border-primary px-3 py-2  " onClick={handleSpanActive} type="button">8</span>
         <span className="text-primary bg-warning border border-primary px-3 py-2  " onClick={handleSpanActive} type="button">9</span>
-        <span className="text-primary bg-warning border border-primary px-3 py-2  " onClick={handleSpanActive} type="button">10</span>
+        <span className="text-primary bg-warning border border-primary px-3 py-2  rounded-end-3" onClick={handleSpanActive} type="button">10</span>
         {/* {
             pages.map(page => <span key={page} className="text-primary bg-warning border border-primary px-3 py-2  " onClick={handleSpanActive} type="button">{page} </span>)
 

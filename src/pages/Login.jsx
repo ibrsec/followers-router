@@ -21,11 +21,13 @@ const navigate = useNavigate();
         console.log('logged in');
         setLoginError(false)
         setIsLogged(true)
+        sessionStorage.setItem("isLogged",true);
         navigate("/");
     }else{
         console.log('logged in olmadi');
         setLoginError(true)
         setIsLogged(false);
+        sessionStorage.setItem("isLogged",false);
 
     }
 
@@ -72,8 +74,12 @@ const navigate = useNavigate();
       <button type="submit" className="btn btn-warning  ">
         Submit
       </button>
-      <button className="btn btn-secondary ms-2  " onClick={handleFill}>Fill the credentials</button>
+      <button className="btn btn-secondary ms-2  " onClick={handleFill}>Fill with  the credentials</button>
       <div>{loginError && <h6 className="text-danger fs-4 my-3">Invalid username or password!!</h6>}</div>
+      <div className=" border rounded-2 my-4 d-inline-block px-4  py-3 bg-secondary">
+        <p className="text-warning fw-bold">Username: john_doe@hibertech.com</p>
+        <p className="text-info fw-bold">Password: hiber99john</p> 
+      </div>
     </form>
   );
 };

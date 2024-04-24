@@ -11,7 +11,8 @@ import About from "./pages/About.jsx";
 import NotFound from "./pages/NotFound.jsx";
 
 function App() {
-  const [isLogged, setIsLogged] = useState(false);
+  
+  const [isLogged, setIsLogged] = useState(Boolean(sessionStorage.getItem("isLogged")));
 
   return (
     <BrowserRouter>
